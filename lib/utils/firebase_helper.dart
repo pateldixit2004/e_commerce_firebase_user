@@ -13,7 +13,7 @@ class FireBaseHelper
     try
         {
           await auth.signInAnonymously();
-          return "Log in successful";
+          return "Sucess";
         }
         catch(e)
     {
@@ -24,7 +24,7 @@ class FireBaseHelper
   bool checkUser()
   {
     auth.currentUser;
-    return auth==null;
+    return auth!=null;
   }
 
 

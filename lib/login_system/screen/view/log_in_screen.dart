@@ -1,3 +1,4 @@
+import 'package:e_commerce_firebase_user/intro_screen/controller/intro_controller.dart';
 import 'package:e_commerce_firebase_user/utils/firebase_helper.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -21,7 +22,9 @@ class _LoginScreenState extends State<LoginScreen> {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            SizedBox(height: 20.h,),
+            // SizedBox(height: 20.h,),
+            Image.asset('assets/image/su1.png'),
+
             Text("Sign In",style: TextStyle(fontSize: 25,fontWeight: FontWeight.bold),),
             SizedBox(height: 25,),
             TextField(
@@ -62,15 +65,15 @@ class _LoginScreenState extends State<LoginScreen> {
                 height: 6.5.h,
                 width: 95.h,
                 decoration: BoxDecoration(
-                  color: Colors.red,
-                  borderRadius: BorderRadius.circular(5.sp)
-
+                  // color: Color(0xff9F57F9),
+                  color: Colors.green,
+                  borderRadius: BorderRadius.circular(30.sp)
                 ),
-                child: Center(child: Text("Sign In",style: TextStyle(fontWeight: FontWeight.bold),)),
+                child: Center(child: Text("Sign In",style: TextStyle(fontWeight: FontWeight.bold,color: Colors.white,fontSize: 20),)),
               ),
             ),
             SizedBox(height: 5.h,),
-            Text("---or continues with---"),
+            Text("-------or continues with-------",style: TextStyle(fontSize: 20),),
             SizedBox(height: 5.h,),
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
@@ -117,9 +120,11 @@ class _LoginScreenState extends State<LoginScreen> {
             ),
             Spacer(),
             TextButton(onPressed: () {
+
               Get.toNamed('/signUp');
 
-            }, child: Text("Create a account! sign up"),),
+
+            }, child: Text("Create a account! sign up",style: TextStyle(color: Colors.black,fontWeight: FontWeight.bold,fontSize: 15),),),
 
           ],
         ),
