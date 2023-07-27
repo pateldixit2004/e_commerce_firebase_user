@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "1036471330400",
+    "project_id": "ecommeredi",
+    "storage_bucket": "ecommeredi.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1036471330400:android:3a8d02584d62e47311c505",
+        "android_client_info": {
+          "package_name": "com.example.e_commerce_firebase_user"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1036471330400-ahbr233614kbvunbhpnlin12kv0kiggq.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDP0p2kDQYDRFAk-PzyRj1GO_o4iGAh6hg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1036471330400-ahbr233614kbvunbhpnlin12kv0kiggq.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
