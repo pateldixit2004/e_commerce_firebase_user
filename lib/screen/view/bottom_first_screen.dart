@@ -97,22 +97,35 @@ class _BottomFirstScreenState extends State<BottomFirstScreen> {
                   itemBuilder: (context, index) {
                     return Column(
                       children: [
-                        Container(
-                          height: 15.h,
-                          width: 25.w,
-                          decoration: BoxDecoration(
-                              borderRadius: BorderRadius.circular(5.sp),
-                              color: Colors.grey.shade300,
-                              image: DecorationImage(
-                                  image: AssetImage(
-                                      '${controller.photo[index].img}'))),
+                        InkWell(
+                          onTap: () {
+                            Get.toNamed('/prode',arguments: index);
+                          },
+                          child: Container(
+                            height: 15.h,
+                            width: 25.w,
+                            decoration: BoxDecoration(
+                                borderRadius: BorderRadius.circular(5.sp),
+                                color: Colors.grey.shade300,
+                                image: DecorationImage(
+                                    image: AssetImage(
+                                        '${controller.recommenedList[index].img}'))),
+                          ),
                         ),
-                        Text('${controller.photo[index].name}'),
-                        Text('${controller.photo[index].subname}'),
+                        Text('${controller.recommenedList[index].name}',style: TextStyle(fontWeight: FontWeight.bold),),
+                        SizedBox(height: 5,),
+                        Text('₹  ${controller.recommenedList[index].price}'),
+                        SizedBox(height: 5,),
+                        Container(
+                          decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(10)
+                          ),
+                          child: Text('  ${controller.recommenedList[index].rat } ⭐',style: TextStyle(color: Colors.green),),
+                        )
                       ],
                     );
                   },
-                  itemCount: 10),
+                  itemCount: controller.recommenedList.length),
             )
           ],
         ),

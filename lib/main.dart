@@ -3,6 +3,7 @@ import 'package:e_commerce_firebase_user/intro_screen/view/intro_screen.dart';
 import 'package:e_commerce_firebase_user/login_system/screen/view/log_in_screen.dart';
 import 'package:e_commerce_firebase_user/login_system/screen/view/sign_up_screen.dart';
 import 'package:e_commerce_firebase_user/screen/view/home_screen.dart';
+import 'package:e_commerce_firebase_user/screen/view/product_detali.dart';
 import 'package:e_commerce_firebase_user/screen/view/splesh_screen.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
@@ -29,6 +30,7 @@ async {
             '/login':(p0) => LoginScreen(),
             '/signUp':(p0) => SignUpScreen(),
             '/home':(p0) => HomeScreen(),
+            '/prode':(p0) => ProductDetail(),
           },
         ),
       )
