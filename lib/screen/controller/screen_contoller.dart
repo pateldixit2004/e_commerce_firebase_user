@@ -37,4 +37,5 @@ class screenController extends GetxController {
     productModel(name: 'Wood Frame',img: 'assets/image/r1.png',price:'1000',rat: '4.5'),
     productModel(name: 'Yellow Armchair',img: 'assets/image/r3.png',price:'2000',rat: '4.0'),
   ];
+  List<productModel> addtocardList=[];
 }

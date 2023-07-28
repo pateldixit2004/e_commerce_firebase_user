@@ -43,7 +43,7 @@ class _BottomFirstScreenState extends State<BottomFirstScreen> {
             ListTile(
               leading: Text(
                 'Browse by Categories',
-                style: TextStyle(color: Colors.black),
+                style: TextStyle(color: Colors.black,fontWeight: FontWeight.bold),
               ),
             ),
             SizedBox(
@@ -87,41 +87,58 @@ class _BottomFirstScreenState extends State<BottomFirstScreen> {
             ListTile(
               leading: Text(
                 "Recommended for You",
-                style: TextStyle(color: Colors.black),
+                style: TextStyle(color: Colors.black,fontWeight: FontWeight.bold),
               ),
             ),
             Expanded(
               child: GridView.builder(
                   gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-                      crossAxisCount: 2),
+                      crossAxisCount: 2, mainAxisExtent: 200,childAspectRatio: 100),
                   itemBuilder: (context, index) {
                     return Column(
                       children: [
                         InkWell(
                           onTap: () {
-                            Get.toNamed('/prode',arguments: index);
+                            Get.toNamed('/prode', arguments: index);
                           },
                           child: Container(
-                            height: 15.h,
-                            width: 25.w,
+                            height: 20.h,
+                            width: 35.w,
                             decoration: BoxDecoration(
-                                borderRadius: BorderRadius.circular(5.sp),
-                                color: Colors.grey.shade300,
-                                image: DecorationImage(
-                                    image: AssetImage(
-                                        '${controller.recommenedList[index].img}'))),
+                              borderRadius: BorderRadius.circular(15.sp),
+                              color: Colors.grey.shade300,
+
+                            ),
+                            child: Column(
+                              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                              children: [
+                                SizedBox(height: 10,),
+                                Image.asset("${controller.recommenedList[index].img}",height: 10.h,),
+                                SizedBox(height: 10,),
+                                Text(
+                                  '${controller.recommenedList[index].name}',
+                                  style: TextStyle(fontWeight: FontWeight.bold),
+                                ),
+                                SizedBox(
+                                  height: 0.5.h,
+                                ),
+                                Text('₹  ${controller.recommenedList[index].price}'),
+                                // SizedBox(
+                                //   height: 1.h,
+                                // ),
+                                // Container(
+                                //   decoration: BoxDecoration(
+                                //       borderRadius: BorderRadius.circular(10)),
+                                //   child: Text(
+                                //     '  ${controller.recommenedList[index].rat} ⭐',
+                                //     style: TextStyle(color: Colors.green),
+                                //   ),
+                                // ),
+                              ],
+                            ),
                           ),
                         ),
-                        Text('${controller.recommenedList[index].name}',style: TextStyle(fontWeight: FontWeight.bold),),
-                        SizedBox(height: 5,),
-                        Text('₹  ${controller.recommenedList[index].price}'),
-                        SizedBox(height: 5,),
-                        Container(
-                          decoration: BoxDecoration(
-                            borderRadius: BorderRadius.circular(10)
-                          ),
-                          child: Text('  ${controller.recommenedList[index].rat } ⭐',style: TextStyle(color: Colors.green),),
-                        )
+
                       ],
                     );
                   },

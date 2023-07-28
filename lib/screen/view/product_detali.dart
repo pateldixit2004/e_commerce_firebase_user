@@ -1,6 +1,7 @@
 import 'package:e_commerce_firebase_user/screen/controller/screen_contoller.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:sizer/sizer.dart';
 
 class ProductDetail extends StatefulWidget {
   const ProductDetail({Key? key}) : super(key: key);
@@ -11,22 +12,139 @@ class ProductDetail extends StatefulWidget {
 
 class _ProductDetailState extends State<ProductDetail> {
   screenController controller = Get.put(screenController());
+  int index = 0;
+
   @override
   void initState() {
     super.initState();
-    Get.arguments;
+    index = Get.arguments;
   }
+
   @override
   Widget build(BuildContext context) {
-    return SafeArea(child: Scaffold(
-      appBar: AppBar(
+    return SafeArea(
+      child: Scaffold(
+        appBar: AppBar(),
+        body: Padding(
+          padding: const EdgeInsets.all(8.0),
+          child: Column(
+            children: [
+              Stack(
+                alignment: Alignment(0.9, 2.5),
+                children: [
 
+                  Container(
+                    height: 40.h,
+                    margin: EdgeInsets.all(10),
+                    padding: EdgeInsets.all(10),
+                    decoration: BoxDecoration(
+                      color: Colors.transparent,
+                      borderRadius: BorderRadius.circular(20),
+                    ),
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        Column(
+                          children: [
+                            SizedBox(height: 30,),
+                            Text(
+                              'char',
+                              style: TextStyle(color: Colors.grey,fontSize: 15),
+                            ),
+                            SizedBox(
+                              height: 5,
+                            ),
+                            Text(
+                              '${controller.recommenedList[index].name}',
+                              style: TextStyle(
+                                  color: Colors.black,
+                                  fontWeight: FontWeight.bold,fontSize: 20),
+                            ),
+                            SizedBox(
+                              height: 20,
+                            ),
+                            Text(
+                              "From",
+                              style: TextStyle(color: Colors.grey),
+                            ),
+                            Text(
+                              "₹ ${controller.recommenedList[index].price}",
+                              style: TextStyle(
+                                  color: Colors.black,
+                                  fontWeight: FontWeight.bold),
+                            ),
+                            SizedBox(height: 20,),
+                            Text('Available Colors',style: TextStyle(color: Colors.grey),),
+                            SizedBox(height: 10,),
+
+                            Row(
+                              mainAxisSize: MainAxisSize.min,
+                              children: [
+                                Container(
+                                  height: 20,
+                                  width: 20,
+                                  color: Colors.red,
+                                ),
+                                SizedBox(width: 4,),
+                                Container(
+                                  height: 20,
+                                  width: 20,
+                                  color: Colors.grey,
+                                ),
+                                SizedBox(width: 4,),
+                                Container(
+                                  height: 20,
+                                  width: 20,
+                                  color: Colors.yellow,
+                                ),
+                              ],
+                            )
+                          ],
+                        ),
+                      ],
+                    ),
+                  ),
+                  Image.asset(
+                    '${controller.recommenedList[index].img}',
+                    height: 30.h,
+                    width: 50.w,
+                  )
+                ],
+              ),
+              SizedBox(height: 10.h,),
+              ListTile(
+                leading: Text(
+                  "Tieton Armchair",
+                  style: TextStyle(
+                      color: Colors.black, fontWeight: FontWeight.bold),
+                ),
+              ),
+              Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: Text(
+                    "This armchair is an elegant and functional piece of furniture. It is suitable for family visits and parties with friends and perfect for relaxing in front of the TV after hard work."),
+              ),
+              SizedBox(height: 10.h),
+              InkWell(
+                onTap: () {
+                  controller.addtocardList.add(controller.recommenedList[index]);
+                  // Get.toNamed('/add');
+                },
+                child: Container(
+                  height: 6.5.h,
+                  width: 95.h,
+                  decoration: BoxDecoration(
+                    // color: Color(0xff9F57F9),
+                      color: Colors.green,
+                      borderRadius: BorderRadius.circular(30.sp)
+                  ),
+                  child: Center(child: Text("Add to card",style: TextStyle(fontWeight: FontWeight.bold,color: Colors.white,fontSize: 20),)),
+                ),
+              ),
+            ],
+          ),
+        ),
       ),
-      body: Column(
-        children: [
-          Image.asset('${controller.recommenedList[0].img}')
-        ],
-      ),
-    ),);
+    );
   }
 }
