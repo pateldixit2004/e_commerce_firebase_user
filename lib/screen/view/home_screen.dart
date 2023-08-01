@@ -31,10 +31,20 @@ class _HomeScreenState extends State<HomeScreen> {
                     controller.indexBottom.value = 1;
                   },
                   icon: Icon(Icons.search)),
+              IconButton(
+                  onPressed: () {
+                    controller.indexBottom.value = 2;
+                  },
+                  icon: Icon(Icons.shopping_cart_checkout)),
+              IconButton(
+                  onPressed: () {
+                    controller.indexBottom.value = 3;
+                  },
+                  icon: Icon(Icons.person)),
             ],
           ),
         ),
-        body: controller.screenList[controller.indexBottom.value],
+        body: Obx(() => controller.screenList[controller.indexBottom.value]),
       ),
     );
   }

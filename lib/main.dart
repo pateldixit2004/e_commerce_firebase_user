@@ -7,6 +7,7 @@ import 'package:e_commerce_firebase_user/screen/view/add_to_card.dart';
 import 'package:e_commerce_firebase_user/screen/view/bottom_first_screen.dart';
 import 'package:e_commerce_firebase_user/screen/view/home_screen.dart';
 import 'package:e_commerce_firebase_user/screen/view/product_detali.dart';
+import 'package:e_commerce_firebase_user/screen/view/serch_screen.dart';
 import 'package:e_commerce_firebase_user/screen/view/splesh_screen.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/foundation.dart';
@@ -33,11 +34,12 @@ async {
           // initialRoute: '/login',
           routes: {
             '/':(p0) => SpleshScreen(),
-            '/intro':(p0) => IntroScreen(),
+            // '/intro':(p0) => IntroScreen(),
             '/login':(p0) => LoginScreen(),
             '/signUp':(p0) => SignUpScreen(),
             '/home':(p0) => HomeScreen(),
             '/bottom':(p0) => BottomFirstScreen(),
+            '/serch':(p0) => SerchScreen(),
             '/prode':(p0) => ProductDetail(),
             '/add':(p0) => AddToCardScreen(),
           },

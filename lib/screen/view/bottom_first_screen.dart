@@ -1,4 +1,5 @@
 import 'package:e_commerce_firebase_user/screen/controller/screen_contoller.dart';
+import 'package:e_commerce_firebase_user/screen/controller/userController.dart';
 import 'package:e_commerce_firebase_user/utils/firebase_helper.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -13,7 +14,13 @@ class BottomFirstScreen extends StatefulWidget {
 
 class _BottomFirstScreenState extends State<BottomFirstScreen> {
   screenController controller = Get.put(screenController());
+  UserController con = Get.put(UserController());
 
+  @override
+  void initState() {
+    super.initState();
+    con.userdata.value=FireBaseHelper.base.userData();
+  }
   @override
   Widget build(BuildContext context) {
     return SafeArea(

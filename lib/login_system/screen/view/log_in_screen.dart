@@ -84,7 +84,7 @@ class _LoginScreenState extends State<LoginScreen> {
                       String msg=await FireBaseHelper.base.anonymouslyGet();
                       if(msg=='Sucess')
                       {
-                        Get.toNamed('/home');
+                        Get.offAllNamed('/home');
                       }
                       Get.snackbar('$msg','',backgroundColor: msg=="Sucess"?Colors.green:Colors.red );
 
@@ -105,7 +105,7 @@ class _LoginScreenState extends State<LoginScreen> {
                       Get.snackbar('$msg','',backgroundColor: msg=="Succes"?Colors.green:Colors.red );
                       if(msg=="Succes")
                       {
-                        Get.toNamed("/home");
+                        Get.offAllNamed("/home");
                       }
                     },
                     child: Container(
@@ -119,14 +119,14 @@ class _LoginScreenState extends State<LoginScreen> {
                   ),
                 ],
               ),
-              SizedBox(height: 20.h,),
+              SizedBox(height: 5.h,),
 
-              TextButton(onPressed: () {
+                TextButton(onPressed: () {
 
-                Get.toNamed('/signUp');
+                  Get.toNamed('/signUp');
 
 
-              }, child: Text("Create a account! sign up",style: TextStyle(color: Colors.black,fontWeight: FontWeight.bold,fontSize: 15),),),
+                }, child: Text("Create a account! sign up",style: TextStyle(color: Colors.black,fontWeight: FontWeight.bold,fontSize: 15),),),
 
             ],
           ),

@@ -24,7 +24,7 @@ class FireBaseHelper
   bool checkUser()
   {
     auth.currentUser;
-    return auth!=null;
+    return auth==null;
   }
 
 
@@ -81,5 +81,14 @@ class FireBaseHelper
     } catch (e) {
       return "$e";
     }
+  }
+
+  Map<String, String?> userData()
+  {
+    User? user=auth.currentUser;
+    var email=user!.email;
+    var name=user.displayName;
+    var img=user.photoURL;
+    return {"email":email,"name":name,"img":img,};
   }
 }
