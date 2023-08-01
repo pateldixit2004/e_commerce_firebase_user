@@ -125,22 +125,45 @@ class _ProductDetailState extends State<ProductDetail> {
                     "This armchair is an elegant and functional piece of furniture. It is suitable for family visits and parties with friends and perfect for relaxing in front of the TV after hard work."),
               ),
               SizedBox(height: 10.h),
-              InkWell(
-                onTap: () {
-                  controller.addtocardList.add(controller.recommenedList[index]);
-                  // Get.toNamed('/add');
-                },
-                child: Container(
-                  height: 6.5.h,
-                  width: 95.h,
-                  decoration: BoxDecoration(
-                    // color: Color(0xff9F57F9),
-                      color: Colors.green,
-                      borderRadius: BorderRadius.circular(30.sp)
-                  ),
-                  child: Center(child: Text("Add to card",style: TextStyle(fontWeight: FontWeight.bold,color: Colors.white,fontSize: 20),)),
-                ),
-              ),
+             Row(
+               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+               children: [
+                 InkWell(
+                   onTap: () {
+                     controller.addtocardList.add(controller.recommenedList[index]);
+                     // Get.toNamed('/add');
+                   },
+                   child: Container(
+                     height: 6.5.h,
+                     width: 150,
+                     // width: 40.h,
+                     decoration: BoxDecoration(
+                       // color: Color(0xff9F57F9),
+                         color: Colors.grey,
+                         borderRadius: BorderRadius.circular(30.sp)
+                     ),
+                     child: Center(child: Text("Add to card",style: TextStyle(fontWeight: FontWeight.bold,color: Colors.white,fontSize: 20),)),
+                   ),
+                 ),
+                 InkWell(
+                   onTap: () {
+                     controller.addtocardList.add(controller.recommenedList[index]);
+                     // Get.toNamed('/add');
+                   },
+                   child: Container(
+                     height: 6.5.h,
+                     width: 150,
+                     // width: 40.h,
+                     decoration: BoxDecoration(
+                       // color: Color(0xff9F57F9),
+                         color: Colors.green,
+                         borderRadius: BorderRadius.circular(30.sp)
+                     ),
+                     child: Center(child: Text("Buy Now",style: TextStyle(fontWeight: FontWeight.bold,color: Colors.white,fontSize: 20),)),
+                   ),
+                 ),
+               ],
+             )
             ],
           ),
         ),
