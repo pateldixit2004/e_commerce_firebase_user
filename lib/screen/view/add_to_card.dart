@@ -15,12 +15,39 @@ class _AddToCardScreenState extends State<AddToCardScreen> {
   Widget build(BuildContext context) {
     return SafeArea(child: Scaffold(
       body: ListView.builder(itemBuilder: (context, index) {
-        return ListTile(
-          leading: Image.asset("${controller.addtocardList[index].img}"),
-          title: Text("${controller.addtocardList[index].name}"),
-          subtitle: Text("${controller.addtocardList[index].price}"),
+        return Container(
+          height: 70,
+          child: Row(
+            children: [
+              Image.network('${controller.addtocardList[index].img}'),
+              Column(
+                children: [
+                  Text("${controller.addtocardList[index].name}"),
+                  Row(
+                    children: [
+                      IconButton(onPressed: () {
+                        controller.qut.value--;
+                      }, icon: Icon(Icons.remove),),
+                      Obx(() =>  Text("${controller.qut.value}")),
+                      IconButton(onPressed: () {
+                        controller.qut.value++;
+                      }, icon: Icon(Icons.add),),
+                    ],
+                  )
+                ],
+              )
+            ],
+          ),
         );
       },itemCount: controller.addtocardList.length,)
     ),);
+  }
+
+  ListTile buildListTile(int index) {
+    return ListTile(
+        leading: Image.network("${controller.addtocardList[index].img}"),
+        title: Text("${controller.addtocardList[index].name}"),
+        subtitle: Text("${controller.addtocardList[index].price}"),
+      );
   }
 }

@@ -38,4 +38,10 @@ class screenController extends GetxController {
     productModel(name: 'Yellow Armchair',img: 'assets/image/r3.png',price:'2000',rat: '4.0'),
   ];
   List<productModel> addtocardList=[];
+  List<productModel> buyNowList=[];
+  List<productModel> l1=[];
+
+
+  RxInt qut=1.obs;
+
 }

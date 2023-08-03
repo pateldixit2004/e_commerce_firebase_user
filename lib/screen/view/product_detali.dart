@@ -24,13 +24,15 @@ class _ProductDetailState extends State<ProductDetail> {
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
-        appBar: AppBar(),
+        appBar: AppBar(
+          backgroundColor: Colors.grey,
+        ),
         body: Padding(
           padding: const EdgeInsets.all(8.0),
           child: Column(
             children: [
               Stack(
-                alignment: Alignment(0.9, 2.5),
+                alignment: Alignment(0.9, 0),
                 children: [
 
                   Container(
@@ -48,14 +50,14 @@ class _ProductDetailState extends State<ProductDetail> {
                           children: [
                             SizedBox(height: 30,),
                             Text(
-                              'char',
+                              '${controller.l1[index].cate}',
                               style: TextStyle(color: Colors.grey,fontSize: 15),
                             ),
                             SizedBox(
                               height: 5,
                             ),
                             Text(
-                              '${controller.recommenedList[index].name}',
+                              '${controller.l1[index].name}',
                               style: TextStyle(
                                   color: Colors.black,
                                   fontWeight: FontWeight.bold,fontSize: 20),
@@ -68,7 +70,7 @@ class _ProductDetailState extends State<ProductDetail> {
                               style: TextStyle(color: Colors.grey),
                             ),
                             Text(
-                              "₹ ${controller.recommenedList[index].price}",
+                              "₹ ${controller.l1[index].price}",
                               style: TextStyle(
                                   color: Colors.black,
                                   fontWeight: FontWeight.bold),
@@ -104,11 +106,16 @@ class _ProductDetailState extends State<ProductDetail> {
                       ],
                     ),
                   ),
-                  Image.asset(
-                    '${controller.recommenedList[index].img}',
-                    height: 30.h,
-                    width: 50.w,
-                  )
+                  // Image.network(
+                  //   '${controller.l1[index].img}',
+                  //   height: 30.h,
+                  //   width: 50.w,
+                  // ),
+                  controller.l1[index].img!.isEmpty?Image.network("https://m.media-amazon.com/images/I/41ATdIgTJLL.jpg",
+                    height: 10.h,): Image.network(
+                    "${controller.l1[index].img}",
+                    height: 10.h,
+                  ),
                 ],
               ),
               SizedBox(height: 10.h,),
@@ -130,7 +137,8 @@ class _ProductDetailState extends State<ProductDetail> {
                children: [
                  InkWell(
                    onTap: () {
-                     controller.addtocardList.add(controller.recommenedList[index]);
+                     controller.addtocardList.add(controller.l1[index]);
+
                      // Get.toNamed('/add');
                    },
                    child: Container(
@@ -147,8 +155,8 @@ class _ProductDetailState extends State<ProductDetail> {
                  ),
                  InkWell(
                    onTap: () {
-                     controller.addtocardList.add(controller.recommenedList[index]);
-                     // Get.toNamed('/add');
+                     controller.buyNowList.add(controller.l1[index]);
+                     Get.toNamed('/buy');
                    },
                    child: Container(
                      height: 6.5.h,

@@ -5,6 +5,7 @@ import 'package:e_commerce_firebase_user/login_system/screen/view/log_in_screen.
 import 'package:e_commerce_firebase_user/login_system/screen/view/sign_up_screen.dart';
 import 'package:e_commerce_firebase_user/screen/view/add_to_card.dart';
 import 'package:e_commerce_firebase_user/screen/view/bottom_first_screen.dart';
+import 'package:e_commerce_firebase_user/screen/view/buy_now_screen.dart';
 import 'package:e_commerce_firebase_user/screen/view/home_screen.dart';
 import 'package:e_commerce_firebase_user/screen/view/product_detali.dart';
 import 'package:e_commerce_firebase_user/screen/view/serch_screen.dart';
@@ -31,10 +32,10 @@ async {
               Sizer(
         builder: (context, orientation, deviceType) => GetMaterialApp(
           debugShowCheckedModeBanner: false,
-          // initialRoute: '/login',
+          initialRoute: '/buy',
           routes: {
             '/':(p0) => SpleshScreen(),
-            // '/intro':(p0) => IntroScreen(),
+            // '/a':(p0) => IntroScreen(),
             '/login':(p0) => LoginScreen(),
             '/signUp':(p0) => SignUpScreen(),
             '/home':(p0) => HomeScreen(),
@@ -42,6 +43,7 @@ async {
             '/serch':(p0) => SerchScreen(),
             '/prode':(p0) => ProductDetail(),
             '/add':(p0) => AddToCardScreen(),
+            '/buy':(p0) => BuyNowScreen(),
           },
         ),
       )

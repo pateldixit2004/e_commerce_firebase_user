@@ -41,6 +41,11 @@ class _HomeScreenState extends State<HomeScreen> {
                     controller.indexBottom.value = 3;
                   },
                   icon: Icon(Icons.person)),
+              IconButton(
+                  onPressed: () {
+                    controller.indexBottom.value = 4;
+                  },
+                  icon: Icon(Icons.shopping_cart_checkout)),
             ],
           ),
         ),

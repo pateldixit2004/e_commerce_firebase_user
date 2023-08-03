@@ -7,7 +7,7 @@ class ScreenModel
 
 class productModel
 {
-  String? name,price,img,rat;
+  String? name,price,img,rat,dec,cate,id;
 
-  productModel({this.name, this.price, this.img,this.rat});
+  productModel({this.name, this.price, this.img,this.rat,this.dec,this.cate,this.id});
 }

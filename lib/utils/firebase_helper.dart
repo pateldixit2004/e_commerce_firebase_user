@@ -1,3 +1,4 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:google_sign_in/google_sign_in.dart';
 
@@ -6,6 +7,8 @@ class FireBaseHelper
   static final base=FireBaseHelper._();
   FireBaseHelper._();
   FirebaseAuth auth=FirebaseAuth.instance;
+  FirebaseFirestore firestore = FirebaseFirestore.instance;
+
 
 
   Future<String> anonymouslyGet()
@@ -23,8 +26,8 @@ class FireBaseHelper
 
   bool checkUser()
   {
-    auth.currentUser;
-    return auth==null;
+    User? user = auth.currentUser;
+    return user!=null;
   }
 
 
@@ -79,6 +82,7 @@ class FireBaseHelper
       await auth.signInWithCredential(credential);
       return "Sucess";
     } catch (e) {
+      print("============== $e");
       return "$e";
     }
   }
@@ -91,4 +95,12 @@ class FireBaseHelper
     var img=user.photoURL;
     return {"email":email,"name":name,"img":img,};
   }
+  //========================================================================================
+
+Stream<QuerySnapshot<Map<String, dynamic>>> readProductData()
+{
+  return firestore.collection('Product').snapshots();
+
+}
+
 }
