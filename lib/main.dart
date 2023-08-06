@@ -32,7 +32,7 @@ async {
               Sizer(
         builder: (context, orientation, deviceType) => GetMaterialApp(
           debugShowCheckedModeBanner: false,
-          initialRoute: '/buy',
+          // initialRoute: '/buy',
           routes: {
             '/':(p0) => SpleshScreen(),
             // '/a':(p0) => IntroScreen(),

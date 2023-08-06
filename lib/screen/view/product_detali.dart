@@ -1,4 +1,6 @@
 import 'package:e_commerce_firebase_user/screen/controller/screen_contoller.dart';
+import 'package:e_commerce_firebase_user/screen/model/add_to_card.dart';
+import 'package:e_commerce_firebase_user/utils/firebase_helper.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:sizer/sizer.dart';
@@ -137,7 +139,7 @@ class _ProductDetailState extends State<ProductDetail> {
                children: [
                  InkWell(
                    onTap: () {
-                     controller.addtocardList.add(controller.l1[index]);
+                   FireBaseHelper.base.addCard(controller.l1[index] as AddtoCardModel );
 
                      // Get.toNamed('/add');
                    },

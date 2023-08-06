@@ -1,4 +1,5 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:e_commerce_firebase_user/screen/model/add_to_card.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:google_sign_in/google_sign_in.dart';
 
@@ -103,4 +104,23 @@ Stream<QuerySnapshot<Map<String, dynamic>>> readProductData()
 
 }
 
+
+
+void addCard(AddtoCardModel model)
+{
+  firestore.collection('card').doc('uid').collection('Product').add(
+    {
+      "name": model.name,
+      "price": model.price,
+      "cate": model.cate,
+      "img": model.img,
+      "dec": model.dec
+    }
+  );
+}
+
+Stream<QuerySnapshot<Map<String, dynamic>>> getCardData()
+{
+  return firestore.collection('card').doc('uid').collection('Product').snapshots();
+}
 }
