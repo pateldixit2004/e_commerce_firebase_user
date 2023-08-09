@@ -7,6 +7,7 @@ import 'package:e_commerce_firebase_user/screen/view/add_to_card.dart';
 import 'package:e_commerce_firebase_user/screen/view/bottom_first_screen.dart';
 import 'package:e_commerce_firebase_user/screen/view/buy_now_screen.dart';
 import 'package:e_commerce_firebase_user/screen/view/home_screen.dart';
+import 'package:e_commerce_firebase_user/screen/view/payment_detali.dart';
 import 'package:e_commerce_firebase_user/screen/view/product_detali.dart';
 import 'package:e_commerce_firebase_user/screen/view/serch_screen.dart';
 import 'package:e_commerce_firebase_user/screen/view/splesh_screen.dart';
@@ -44,6 +45,7 @@ async {
             '/prode':(p0) => ProductDetail(),
             '/add':(p0) => AddToCardScreen(),
             '/buy':(p0) => BuyNowScreen(),
+            '/payd':(p0) => PaymentDeatilScreen(),
           },
         ),
       )

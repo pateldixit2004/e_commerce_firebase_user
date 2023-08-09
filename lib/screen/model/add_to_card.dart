@@ -2,7 +2,7 @@ class AddtoCardModel
 
 
 {
-  String? name,price,img,rat,dec,cate,id;
+  String? name,price,img,rat,dec,cate,id,qu;
 
   AddtoCardModel(
       {this.name,

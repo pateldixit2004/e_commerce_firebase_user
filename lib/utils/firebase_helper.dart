@@ -1,5 +1,7 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:e_commerce_firebase_user/screen/model/add_to_card.dart';
+import 'package:e_commerce_firebase_user/screen/model/screen_model.dart';
+import 'package:e_commerce_firebase_user/screen/view/product_detali.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:google_sign_in/google_sign_in.dart';
 
@@ -9,7 +11,7 @@ class FireBaseHelper
   FireBaseHelper._();
   FirebaseAuth auth=FirebaseAuth.instance;
   FirebaseFirestore firestore = FirebaseFirestore.instance;
-
+ String? uid;
 
 
   Future<String> anonymouslyGet()
@@ -94,6 +96,8 @@ class FireBaseHelper
     var email=user!.email;
     var name=user.displayName;
     var img=user.photoURL;
+    uid= user.uid;
+
     return {"email":email,"name":name,"img":img,};
   }
   //========================================================================================
@@ -106,21 +110,26 @@ Stream<QuerySnapshot<Map<String, dynamic>>> readProductData()
 
 
 
-void addCard(AddtoCardModel model)
+void addCard(productModel model)
 {
-  firestore.collection('card').doc('uid').collection('Product').add(
+  firestore.collection('card').doc('$uid').collection('Product').add(
     {
       "name": model.name,
       "price": model.price,
       "cate": model.cate,
       "img": model.img,
-      "dec": model.dec
+      "dec": model.dec,
     }
   );
 }
 
 Stream<QuerySnapshot<Map<String, dynamic>>> getCardData()
 {
-  return firestore.collection('card').doc('uid').collection('Product').snapshots();
+  return firestore.collection('card').doc('$uid').collection('Product').snapshots();
+}
+
+void deleteCart()
+{
+  firestore.collection('card').doc('$uid').collection('Product');
 }
 }

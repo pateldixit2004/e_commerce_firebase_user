@@ -1,4 +1,5 @@
 import 'package:e_commerce_firebase_user/screen/model/screen_model.dart';
+import 'package:e_commerce_firebase_user/screen/view/product_detali.dart';
 import 'package:get/get.dart';
 
 class screenController extends GetxController {
@@ -37,11 +38,21 @@ class screenController extends GetxController {
     productModel(name: 'Wood Frame',img: 'assets/image/r1.png',price:'1000',rat: '4.5'),
     productModel(name: 'Yellow Armchair',img: 'assets/image/r3.png',price:'2000',rat: '4.0'),
   ];
+
   List<productModel> addtocardList=[];
   List<productModel> buyNowList=[];
+  // List<productModel> l1=[];
   List<productModel> l1=[];
-
+  RxInt total=0.obs;
 
   RxInt qut=1.obs;
+  RxDouble totalprice=0.0.obs;
+  void totalPrice()
+  {
+    l1.forEach((element) {
+
+      total+=int.parse(element.price!);
+    });
+  }
 
 }
