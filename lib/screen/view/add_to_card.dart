@@ -48,7 +48,7 @@ class _AddToCardScreenState extends State<AddToCardScreen> {
                 AddtoCardModel model=AddtoCardModel(name: name,cate: cat,dec: dec,img: img,price: price,id: id);
                 cardList.add(model);
                 print("=========================================$cardList====================================");
-                // print("=========================================${controller.totalprice.value}====================================");
+                print("=========================================${controller.totalprice.value}====================================");
 
               }
             return Column(
@@ -108,7 +108,6 @@ class _AddToCardScreenState extends State<AddToCardScreen> {
                                       if(controller.qut.value>0)
                                         {
                                           controller.qut.value--;
-
                                         }
                                     }, icon: Icon(Icons.remove),),
                                     Obx(() =>  Text("${controller.qut.value}")),
@@ -118,7 +117,6 @@ class _AddToCardScreenState extends State<AddToCardScreen> {
                                     }, icon: Icon(Icons.add),),
                                   ],
                                 ),
-
                               ],
                             ),
                           )
