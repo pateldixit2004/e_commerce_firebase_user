@@ -111,8 +111,8 @@ class _AddToCardScreenState extends State<AddToCardScreen> {
 
                                         }
                                     }, icon: Icon(Icons.remove),),
-                                    // Obx(() =>  Text("${controller.qut.value}")),
-                                  Text("${controller.qut.value}"),
+                                    Obx(() =>  Text("${controller.qut.value}")),
+                                  // Text("${controller.qut.value}"),
                                     IconButton(onPressed: () {
                                       controller.qut.value++;
                                     }, icon: Icon(Icons.add),),
