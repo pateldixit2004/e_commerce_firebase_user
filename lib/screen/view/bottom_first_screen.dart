@@ -198,7 +198,7 @@ class _BottomFirstScreenState extends State<BottomFirstScreen> {
                                  Get.toNamed('/prode', arguments: index);
                                },
                                child: Container(
-                                 height: 20.h,
+                                 height: 22.h,
                                  width: 35.w,
                                  decoration: BoxDecoration(
                                    borderRadius: BorderRadius.circular(15.sp),

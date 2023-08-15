@@ -21,7 +21,7 @@ class PaymentHelper {
       'timeout': 60, // in seconds
       'prefill': {
         'contact': '1245789865',
-        'email': 'tailorvivek012@gmail.com'
+        'email': 'dixitpatoliya34@gamil.com'
       }
     };
 

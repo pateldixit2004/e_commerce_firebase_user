@@ -128,8 +128,8 @@ Stream<QuerySnapshot<Map<String, dynamic>>> getCardData()
   return firestore.collection('card').doc('$uid').collection('Product').snapshots();
 }
 
-void deleteCart()
+void deleteCart(String id)
 {
-  firestore.collection('card').doc('$uid').collection('Product');
+  firestore.collection('card').doc('$uid').collection('Product').doc(id).delete();
 }
 }

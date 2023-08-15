@@ -55,7 +55,7 @@ productModel? model;
                   color: Colors.green,
                   borderRadius: BorderRadius.circular(30.sp)
               ),
-              child: Center(child: Text("Place order",style: TextStyle(fontWeight: FontWeight.bold,color: Colors.white,fontSize: 20),)),
+              child: Center(child: Text("Place order",style: TextStyle(fontWeight: FontWeight.bold,color: Colors.white,fontSize: 20),),),
             ),
           ),
         ],

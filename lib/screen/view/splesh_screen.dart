@@ -25,7 +25,7 @@ class _SpleshScreenState extends State<SpleshScreen> {
   Widget build(BuildContext context) {
     Timer(Duration(seconds: 5), () {
       // isLogin==false?Get.toNamed('/home'):
-      Get.toNamed(isLogin==true?'/home':'/login');
+      Get.offAllNamed(isLogin==true?'/home':'/login');
       // Get.toNamed('/intro');
     });
     return SafeArea(child: Scaffold(
@@ -34,7 +34,7 @@ class _SpleshScreenState extends State<SpleshScreen> {
           height: 150,
           width: 150,
           decoration: BoxDecoration(
-            image: DecorationImage(image: AssetImage("assets/image/img_2.png")),
+            image: DecorationImage(image: AssetImage("assets/image/logo1.png")),
           ),
         ),
       ),

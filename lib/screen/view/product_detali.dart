@@ -35,9 +35,8 @@ class _ProductDetailState extends State<ProductDetail> {
             child: Column(
               children: [
                 Stack(
-                  alignment: Alignment(0.9, 0),
+                  alignment: Alignment(0.9, 1.5),
                   children: [
-
                     Container(
                       height: 40.h,
                       margin: EdgeInsets.all(10),
@@ -115,9 +114,9 @@ class _ProductDetailState extends State<ProductDetail> {
                     //   width: 50.w,
                     // ),
                     controller.l1[index].img!.isEmpty?Image.network("https://m.media-amazon.com/images/I/41ATdIgTJLL.jpg",
-                      height: 10.h,): Image.network(
+                      height: 28.h,): Image.network(
                       "${controller.l1[index].img}",
-                      height: 10.h,
+                      height: 28.h,fit: BoxFit.fill,
                     ),
                   ],
                 ),
@@ -135,12 +134,13 @@ class _ProductDetailState extends State<ProductDetail> {
                       "This armchair is an elegant and functional piece of furniture. It is suitable for family visits and parties with friends and perfect for relaxing in front of the TV after hard work."),
                 ),
                 SizedBox(height: 10.h),
-               Row(
+                Row(
                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                  children: [
                    InkWell(
                      onTap: () {
                      FireBaseHelper.base.addCard(controller.l1[index]);
+                     Get.snackbar("Successful add to Card...", "");
 
                        // Get.toNamed('/add');
                      },

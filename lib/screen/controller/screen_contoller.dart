@@ -43,6 +43,37 @@ class screenController extends GetxController {
   List<productModel> buyNowList=[];
   // List<productModel> l1=[];
   List<productModel> l1=[];
+
+
+
+  RxList list=[].obs;
+  List fitreList=[];
+  void serchProduct(String serch)
+  {
+    if(serch.isEmpty)
+      {
+        list.value=List.from(l1);
+      }
+    else
+      {
+        fitreList.clear();
+        for(var x in l1)
+          {
+            if(x.price!.toLowerCase().contains(serch!.toLowerCase()) || x.name!.toLowerCase().contains(serch!.toLowerCase()))
+              {
+                fitreList.add(x);
+              }
+          }
+        list.value=List.from(fitreList);
+      }
+
+  }
+
+
+
+
+
+
   RxInt total=0.obs;
 
   RxInt qut=1.obs;

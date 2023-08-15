@@ -30,13 +30,7 @@ class _BuyNowScreenState extends State<BuyNowScreen> {
       child: Scaffold(
         appBar: AppBar(
           backgroundColor: Colors.grey,
-          actions: [
-            TextButton(
-                onPressed: () {
-                  Get.back();
-                },
-                child: Text('cancel'))
-          ],
+
         ),
         body: SingleChildScrollView(
           child: Padding(
