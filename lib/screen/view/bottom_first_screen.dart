@@ -215,6 +215,7 @@ class _BottomFirstScreenState extends State<BottomFirstScreen> {
                                        height: 10.h,): Image.network(
                                        "${controller.l1[index].img}",
                                        height: 10.h,
+                                       fit: BoxFit.cover,
                                      ),
                                      Text(
                                        '${controller.l1[index].name}',

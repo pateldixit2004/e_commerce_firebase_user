@@ -12,6 +12,6 @@ class HomeController extends GetxController {
     SerchScreen(),
     AddToCardScreen(),
     ProfileScreen(),
-    BuyNowScreen(),
+
   ];
 }
