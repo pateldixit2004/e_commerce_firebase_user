@@ -15,6 +15,10 @@ A few resources to get you started if this is your first Flutter project:
 
 
 
+https://github.com/userdixit/e_commerce_firebase_user/assets/120080979/52f00da6-7c96-4eca-82b8-3283253bb166
+
+
+
 https://github.com/userdixit/e_commerce_firebase_user/assets/120080979/d99c0f65-4bf2-4113-a5cd-d723ac6d43fc
 
 
